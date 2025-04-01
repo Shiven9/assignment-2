@@ -28,11 +28,23 @@ const createScene = () => {
 
     // Function to switch environments
     const loadEnvironment = (env) => {
-        if (currentEnvironment) currentEnvironment.dispose();
+        // Dispose of the current environment to prevent overlapping of different scenes
+        if (currentEnvironment) {
+            currentEnvironment.forEach(mesh => mesh.dispose());
+        }
+
+        // Loading new environment model
         BABYLON.SceneLoader.ImportMesh("", "", environments[env].model, scene, (meshes) => {
             currentEnvironment = meshes[0];
+
+            // Adjusting model size and rescaling it to prevent oversized objects
+            meshes.forEach(mesh => {
+                mesh.scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);
+                mesh.position = new BABYLON.Vector3(0, 0, 0);
+            });
         });
 
+        // Stopping the previous sound to play the new one
         ambientSound.stop();
         ambientSound = new BABYLON.Sound("ambientSound", environments[env].sound, scene, null, { loop: true, autoplay: true });
     };
