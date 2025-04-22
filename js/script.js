@@ -96,10 +96,10 @@ const createScene = async () => {
   Object.keys(environments).forEach((env, index) => {
     const button = BABYLON.MeshBuilder.CreateBox(
       env + "Button",
-      { height: 1, width: 3, depth: 0.2 },
+      { height: 0.5, width: 2, depth: 0.2 }, // Reduced the size of the button
       scene
     );
-    button.position = new BABYLON.Vector3(index * 4 - 4, 0, 5);
+    button.position = new BABYLON.Vector3(0, 0, 4 + index * 2); // adjusted positioning of the buttons
 
     const material = new BABYLON.StandardMaterial(env + "Material", scene);
     material.diffuseColor = new BABYLON.Color3(
@@ -118,12 +118,13 @@ const createScene = async () => {
       env.toUpperCase(),
       null,
       140,
-      "bold 72px Arial",
+      "bold 48px Roboto", //Reduced font size and changed the font
       "white",
       "transparent"
     );
     material.diffuseTexture = dynamicTexture;
 
+    // Makes the buttons interactive
     button.actionManager = new BABYLON.ActionManager(scene);
     button.actionManager.registerAction(
       new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPickTrigger, () =>
