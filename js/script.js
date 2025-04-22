@@ -6,9 +6,15 @@ const engine = new BABYLON.Engine(canvas, true);
 const createScene = async () => {
   const scene = new BABYLON.Scene(engine);
 
-  // Enable WebXR VR experience
-  // await XR setup to ensure proper initialization
-  await scene.createDefaultXRExperienceAsync();
+  // try and catch method to see if the WebXR initializes
+  try {
+    // Enable WebXR VR experience
+    // await XR setup to ensure proper initialization
+    const xrExperience = await scene.createDefaultXRExperienceAsync();
+    console.log("WebXR Initialized", xrExperience);
+  } catch (error) {
+    console.error("Failed to initialize WebXR:", error);
+  }
 
   // Setting up the camera
   // adjusted camera for better view of the model
@@ -62,13 +68,20 @@ const createScene = async () => {
       environments[env].model,
       scene,
       (meshes) => {
-        currentEnvironment = meshes[0];
+        if (meshes.length > 0) {
+          currentEnvironment = meshes[0];
 
-        // Adjusting model size and rescaling it to prevent oversized objects
-        meshes.forEach((mesh) => {
-          mesh.scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);
-          mesh.position = new BABYLON.Vector3(0, 0, 0);
-        });
+          // Adjusting model size and rescaling it to prevent oversized objects
+          meshes.forEach((mesh) => {
+            mesh.scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);
+            mesh.position = new BABYLON.Vector3(0, 0, 0);
+          });
+        } else {
+          console.error("Failed to load environment model:", env);
+        }
+        (error) => {
+          console.error("Error loading mesh:", error);
+        };
       }
     );
 
@@ -140,7 +153,7 @@ const createScene = async () => {
 };
 
 // Initialize Scene
-const scene = createScene();
+const scene = await createScene();
 engine.runRenderLoop(() => scene.render());
 
 // Handle Window Resize
