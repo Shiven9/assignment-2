@@ -1,6 +1,6 @@
 # Blender v2.83.0 OBJ File: 'tree asset.blend'
 # www.blender.org
-mtllib tree asset.mtl
+mtllib forest.mtl
 o Cube
 v 3.143923 1.324558 -3.063383
 v 3.162861 0.393273 -3.113562

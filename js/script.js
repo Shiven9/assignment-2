@@ -22,7 +22,7 @@ const createScene = async () => {
     "camera",
     Math.PI / 2,
     Math.PI / 3,
-    20,
+    60, // increases radius
     new BABYLON.Vector3(0, 2, 0),
     scene
   );
@@ -115,7 +115,7 @@ const createScene = async () => {
       { height: 0.5, width: 2, depth: 0.2 }, // Reduced the size of the button
       scene
     );
-    button.position = new BABYLON.Vector3(0, 0, 4 + index * 2); // adjusted positioning of the buttons
+    button.position = new BABYLON.Vector3(-6, 2 - index * 1.5, 4); // adjusted positioning of the buttons
 
     const material = new BABYLON.StandardMaterial(env + "Material", scene);
     material.diffuseColor = new BABYLON.Color3(
@@ -130,6 +130,7 @@ const createScene = async () => {
       { width: 512, height: 256 },
       scene
     );
+    dynamicTexture.hasAlpha = true;
     dynamicTexture.drawText(
       env.toUpperCase(),
       null,
@@ -138,6 +139,10 @@ const createScene = async () => {
       "white",
       "transparent"
     );
+
+    // Text was flipped and was upside down.
+    dynamicTexture.uScale = -1; // This should fix it
+
     material.diffuseTexture = dynamicTexture;
 
     // Makes the buttons interactive

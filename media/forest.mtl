@@ -1,0 +1,35 @@
+# Blender MTL File: 'None'
+# Material Count: 3
+
+newmtl Bark
+Ns 24.099163
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.286364 0.286364 0.286364
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd -s 15.000000 15.000000 15.000000 C:\\Users\\kilor\\blenderkit_data\\models\\lowpoly_tree__with_random_season__2d25bed2-80fc-4d44-97c0-c0c4b2c3d35c\\textures_1k\\tmpstjhjs6f
+
+newmtl Ground
+Ns 113.132244
+Ka 1.000000 1.000000 1.000000
+Kd 0.065994 0.036503 0.004921
+Ks 0.368182 0.368182 0.368182
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump C:\\Users\\kilor\\blenderkit_data\\models\\lowpoly_tree__with_random_season__2d25bed2-80fc-4d44-97c0-c0c4b2c3d35c\\textures_1k\\forrest_ground_01_nor_2k.jpg
+map_Ns C:\\Users\\kilor\\blenderkit_data\\models\\lowpoly_tree__with_random_season__2d25bed2-80fc-4d44-97c0-c0c4b2c3d35c\\textures_1k\\forrest_ground_01_rough_2k.jpg
+
+newmtl SimpleProceduralLeaf
+Ns 323.999994
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
