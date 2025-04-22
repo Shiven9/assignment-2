@@ -45,7 +45,7 @@ const createScene = async () => {
     },
   };
 
-  let currentEnvironment = null;
+  let currentEnvironment = [];
   let ambientSound = new BABYLON.Sound(
     "ambientSound",
     environments.beach.sound,
@@ -57,7 +57,7 @@ const createScene = async () => {
   // Function to switch environments
   const loadEnvironment = (env) => {
     // Dispose of the current environment to prevent overlapping of different scenes
-    if (currentEnvironment) {
+    if (currentEnvironment.length > 0) {
       currentEnvironment.forEach((mesh) => mesh.dispose());
     }
 
@@ -69,7 +69,7 @@ const createScene = async () => {
       scene,
       (meshes) => {
         if (meshes.length > 0) {
-          currentEnvironment = meshes[0];
+          currentEnvironment = meshes;
 
           // Adjusting model size and rescaling it to prevent oversized objects
           meshes.forEach((mesh) => {
@@ -79,15 +79,18 @@ const createScene = async () => {
         } else {
           console.error("Failed to load environment model:", env);
         }
-        (error) => {
-          console.error("Error loading mesh:", error);
-        };
+      },
+      // fixed up the callback error
+      null,
+      (error) => {
+        console.error("Error loading mesh:", error);
       }
     );
 
     // Stoping previous sound if it is playing
-    if (ambientSound && ambientSound.isPlaying) {
+    if (ambientSound) {
       ambientSound.stop();
+      ambientSound.dispose(); // Disposing the previous sound to free up the resources
     }
 
     // Load and play new sound
@@ -131,7 +134,7 @@ const createScene = async () => {
       env.toUpperCase(),
       null,
       140,
-      "bold 48px Roboto", //Reduced font size and changed the font
+      "bold 48px Roboto, sans-serif", //Reduced font size and changed the font
       "white",
       "transparent"
     );
@@ -153,8 +156,10 @@ const createScene = async () => {
 };
 
 // Initialize Scene
-const scene = await createScene();
-engine.runRenderLoop(() => scene.render());
+(async () => {
+  const scene = await createScene();
+  engine.runRenderLoop(() => scene.render());
+})();
 
 // Handle Window Resize
 window.addEventListener("resize", () => engine.resize());
