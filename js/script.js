@@ -5,6 +5,18 @@ const engine = new BABYLON.Engine(canvas, true);
 // Creating the scene
 const createScene = async () => {
   const scene = new BABYLON.Scene(engine);
+  // Add this immediately after the scene is created
+
+  // Adding a skybox for better environment
+  const skyMaterial = new BABYLON.SkyMaterial("skyMaterial", scene);
+  skyMaterial.backFaceCulling = false;
+  skyMaterial.inclination = 0.4;
+  skyMaterial.luminance = 1;
+  skyMaterial.turbidity = 10;
+  skyMaterial.sunPosition = new BABYLON.Vector3(0, 100, 0);
+
+  const skybox = BABYLON.MeshBuilder.CreateBox("skyBox", { size: 1000 }, scene);
+  skybox.material = skyMaterial;
 
   // try and catch method to see if the WebXR initializes
   try {
@@ -73,7 +85,7 @@ const createScene = async () => {
 
           // Adjusting model size and rescaling it to prevent oversized objects
           meshes.forEach((mesh) => {
-            mesh.scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);
+            mesh.scaling = new BABYLON.Vector3(0.05, 0.05, 0.05); // changed size
             mesh.position = new BABYLON.Vector3(0, 0, 0);
           });
         } else {
@@ -115,7 +127,7 @@ const createScene = async () => {
       { height: 0.5, width: 2, depth: 0.2 }, // Reduced the size of the button
       scene
     );
-    button.position = new BABYLON.Vector3(-6, 2 - index * 1.5, 4); // adjusted positioning of the buttons
+    button.position = new BABYLON.Vector3(0, 1 + index * 1.2, -4); // adjusted positioning of the buttons
 
     const material = new BABYLON.StandardMaterial(env + "Material", scene);
     material.diffuseColor = new BABYLON.Color3(

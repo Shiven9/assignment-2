@@ -12,8 +12,8 @@ newmtl sand
 	Kd 0.909804 0.776471 0.486275
 	Ks 0.000000 0.000000 0.000000
 	Ke 0.000000 0.000000 0.000000
-	map_Ka D:\3D MAX\- текстуры -\песок_43.jpg
-	map_Kd D:\3D MAX\- текстуры -\песок_43.jpg
+	map_Ka D:\3D MAX\- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ -\пїЅпїЅпїЅпїЅпїЅ_43.jpg
+	map_Kd D:\3D MAX\- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ -\пїЅпїЅпїЅпїЅпїЅ_43.jpg
 
 newmtl sand_2
 	Ns 10.000000
@@ -26,8 +26,8 @@ newmtl sand_2
 	Kd 0.588000 0.588000 0.588000
 	Ks 0.000000 0.000000 0.000000
 	Ke 0.000000 0.000000 0.000000
-	map_Ka D:\3D MAX\- текстуры -\texture-sand.jpg
-	map_Kd D:\3D MAX\- текстуры -\texture-sand.jpg
+	map_Ka D:\3D MAX\- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ -\texture-sand.jpg
+	map_Kd D:\3D MAX\- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ -\texture-sand.jpg
 
 newmtl wire_028089177
 	Ns 32
@@ -50,8 +50,8 @@ newmtl stone
 	Kd 0.588235 0.588235 0.588235
 	Ks 0.000000 0.000000 0.000000
 	Ke 0.000000 0.000000 0.000000
-	map_Ka D:\3D MAX\- текстуры -\гранит_40.jpg
-	map_Kd D:\3D MAX\- текстуры -\гранит_40.jpg
+	map_Ka D:\3D MAX\- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ -\пїЅпїЅпїЅпїЅпїЅпїЅ_40.jpg
+	map_Kd D:\3D MAX\- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ -\пїЅпїЅпїЅпїЅпїЅпїЅ_40.jpg
 
 newmtl palma
 	Ns 9.999999
@@ -64,8 +64,8 @@ newmtl palma
 	Kd 0.588235 0.588235 0.588235
 	Ks 0.000000 0.000000 0.000000
 	Ke 0.000000 0.000000 0.000000
-	map_Ka D:\3D MAX\- текстуры -\кора-дерева-пальма_59.jpg
-	map_Kd D:\3D MAX\- текстуры -\кора-дерева-пальма_59.jpg
+	map_Ka D:\3D MAX\- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ -\пїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅ_59.jpg
+	map_Kd D:\3D MAX\- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ -\пїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅ_59.jpg
 
 newmtl stebel
 	Ns 36.000000
@@ -90,8 +90,8 @@ newmtl list
 	Kd 0.588235 0.588235 0.588235
 	Ks 0.306000 0.306000 0.306000
 	Ke 0.000000 0.000000 0.000000
-	map_Ka Map__2_Gradient.tga
-	map_Kd Map__2_Gradient.tga
+	map_Ka Beach_Gradient.tga
+	map_Kd Beach_Gradient.tga
 
 newmtl list_2
 	Ns 29.999998
@@ -104,8 +104,8 @@ newmtl list_2
 	Kd 0.588235 0.588235 0.588235
 	Ks 0.306000 0.306000 0.306000
 	Ke 0.000000 0.000000 0.000000
-	map_Ka Map__2_Gradient.tga
-	map_Kd Map__2_Gradient.tga
+	map_Ka Beach_Gradient.tga
+	map_Kd Beach_Gradient.tga
 
 newmtl stebel_2
 	Ns 36.000000
@@ -130,5 +130,5 @@ newmtl Material__74
 	Kd 0.588235 0.588235 0.588235
 	Ks 0.306000 0.306000 0.306000
 	Ke 0.000000 0.000000 0.000000
-	map_Ka Map__2_Gradient.tga
-	map_Kd Map__2_Gradient.tga
+	map_Ka Beach_Gradient.tga
+	map_Kd Beach_Gradient.tga
