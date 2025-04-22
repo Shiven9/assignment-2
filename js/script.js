@@ -3,11 +3,12 @@ const canvas = document.getElementById('renderCanvas');
 const engine = new BABYLON.Engine(canvas, true);
 
 // Creating the scene
-const createScene = () => {
+const createScene = async () => {
     const scene = new BABYLON.Scene(engine);
 
     // Enable WebXR VR experience
-    const xrHelper = scene.createDefaultXRExperienceAsync({});
+    // await XR setup to ensure proper initialization
+    await scene.createDefaultXRExperienceAsync();
 
     // Setting up the camera
     const camera = new BABYLON.ArcRotateCamera("camera", Math.PI / 2, Math.PI / 3, 10, BABYLON.Vector3.Zero(), scene);
